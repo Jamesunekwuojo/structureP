@@ -29,6 +29,6 @@ def main():
 
     cost = cost_after_tax(price, tax);
     
-    print(f"The cost after applying {tax}% tax is {cost}")
+    print(f"The cost after applying {tax}% tax is {cost:.2f}")
 
 main()

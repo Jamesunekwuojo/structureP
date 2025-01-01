@@ -15,14 +15,20 @@ step 5: call by value the 'cost_after_price' function with arguments 100 and 10
 # Python code implementation of the above steps
 def cost_after_tax(price, tax):
 
-    cost = price * (1 + tax / 100)
+    return price * (1 + tax / 100)
 
-    print(f"cost after after tax is {cost}")
+    # print(f"cost after after tax is {cost}")
 
-    return cost
+    # return cost
 
 def main():
+    
+    price = float(input("Enter price:"))
+    
+    tax = float(input("Enter tax for price:"))
 
-    cost_after_tax(100, 10)
+    cost = cost_after_tax(price, tax);
+    
+    print(f"The cost after applying {tax}% tax is {cost}")
 
 main()

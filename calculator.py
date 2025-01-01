@@ -35,84 +35,71 @@ step 9: while repeat_operation is equal to false print "Thank you for using our 
 
 
 # Python code to implement the above pseudocode
-
-# variable declaration function
 def variable_declaration():
-    print("""Welcome to 
-          AUL Calculator App. Please input integers to start arithmetic operation""")
-    
-    a = int(input("Enter  first interger:"))
-    b = int(input("Enter second integer:"))
+    global a, b
+    a = int(input("Enter first integer: "))
+    b = int(input("Enter second integer: "))
 
-variable_declaration()
-
-# Arithmetic operation declaration functions
-
-def addittion(a, b):
+def addition():
     sum = a + b
     print(f"Sum of {a} and {b} is {sum}")
     return sum
 
-
-def multiplication(a, b):
-    product = a * b
-    print(f"Product of {a} and {b} is {product}")
-    return product
-
-def division(a, b):
-    result = a / b
-    print(f"Division of {a} and {b} is {result}")
-    return result
-
-def subtraction(a, b):
+def subtraction():
     difference = a - b
     print(f"Difference of {a} and {b} is {difference}")
     return difference
 
+def multiplication():
+    product = a * b
+    print(f"Product of {a} and {b} is {product}")
+    return product
 
-# Memo to choose operation of choice
+def division():
+    if b == 0:
+        print("Error: Division by zero is not allowed.")
+        return None
+    result = a / b
+    print(f"Division of {a} and {b} is {result}")
+    return result
 
 def choose_operation():
-    print("operations to perform")
+    print("Operations to perform:")
     print("1. Addition")
     print("2. Subtraction")
     print("3. Multiplication")
     print("4. Division")
 
-    choice = int(input("Enter your choice (1, 2, 3, 4):"))
+    choice = int(input("Enter your choice (1, 2, 3, 4): "))
 
     if choice == 1:
-        addittion()
-
+        addition()
     elif choice == 2:
         subtraction()
-
     elif choice == 3:
         multiplication()
-
     elif choice == 4:
         division()
-
     else:
         print("Invalid choice")
 
-choose_operation()
+# Main program
+print("Welcome to AUL Calculator App!")
+repeat_operation = True
 
+while repeat_operation:
+    variable_declaration()
+    choose_operation()
+    controller_operation = int(input("Do you want to perform another operation? (yes/no) YES - press 1, NO - press 0: "))
+    if controller_operation == 1:
+        repeat_operation = True
+    elif controller_operation == 0:
+        repeat_operation = False
+    else:
+        print("Invalid choice. Exiting.")
+        break
 
-# repeat operation logic
-
-repeat_operation = False
-
-controller_operation = int(input("Do you want to perform another operation? (yes/no) YES - press 1, NO - press 0" ))
-
-
-if controller_operation == 1:
-    repeat_operation = True
-
-elif controller_operation == 0:
-    repeat_operation = False
-else:
-    print("Invalid choice")
+print("Thank you for using our calculator!")
 
 
 

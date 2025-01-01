@@ -35,11 +35,14 @@ step 9: while repeat_operation is equal to false print "Thank you for using our 
 
 
 # Python code to implement the above pseudocode
+
+# Variable declaration function
 def variable_declaration():
     global a, b
     a = int(input("Enter first integer: "))
     b = int(input("Enter second integer: "))
 
+# Functions for arithemetic operation
 def addition():
     sum = a + b
     print(f"Sum of {a} and {b} is {sum}")
@@ -63,6 +66,8 @@ def division():
     print(f"Division of {a} and {b} is {result}")
     return result
 
+
+# Function to choose operation
 def choose_operation():
     print("Operations to perform:")
     print("1. Addition")
@@ -83,10 +88,11 @@ def choose_operation():
     else:
         print("Invalid choice")
 
-# Main program
+# Where Main program starts from
 print("Welcome to AUL Calculator App!")
 repeat_operation = True
 
+# For loop to repeat the operation
 while repeat_operation:
     variable_declaration()
     choose_operation()
